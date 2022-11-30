@@ -7,7 +7,8 @@ package eirvidmovierentalsystem;
 
 /**
  *
- * @author carol
+ * @author Carol de Sa Teixeira – 2020331
+ * @author Yan Oliveira 2020336
  */
 public class EirVidMovieRentalSystem {
 
