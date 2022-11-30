@@ -1,7 +1,6 @@
 package eirvidmovierentalsystem;
 
 import SQL.SQLConnection;
-import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
