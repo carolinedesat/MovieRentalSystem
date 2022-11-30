@@ -1,5 +1,9 @@
 package eirvidmovierentalsystem;
 
+/**
+ * @author Yan Oliveira 2020336
+ */
+
 import SQL.SQLConnection;
 import java.sql.ResultSet;
 import java.util.logging.Level;
