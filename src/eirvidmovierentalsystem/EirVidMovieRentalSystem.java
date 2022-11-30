@@ -17,14 +17,14 @@ public class EirVidMovieRentalSystem {
      */
     public static void main(String[] args) throws Exception {
 
-//        Menu m = new Menu();
-//        m.openMenu();
-//
-//        Login l = new Login();
-//        l.Login();
-//
-//        Register r = new Register();
-//        r.Register();
+        Menu m = new Menu();
+        m.openMenu();
+
+        Login l = new Login();
+       l.Login();
+
+       Register r = new Register();
+       r.Register();
 
     }
 }
