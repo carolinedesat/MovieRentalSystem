@@ -14,8 +14,16 @@ public class EirVidMovieRentalSystem {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws Exception {
+
+//        Menu m = new Menu();
+//        m.openMenu();
+//
+//        Login l = new Login();
+//        l.Login();
+//
+//        Register r = new Register();
+//        r.Register();
+
     }
-    
 }
