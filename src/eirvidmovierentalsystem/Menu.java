@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author carol
+ * @author caroline de sa 2020331
  */
 public class Menu {
 
@@ -36,13 +36,13 @@ public class Menu {
 
             switch (Integer.parseInt(sign)) {
                 case 1:
-                    //Login l = new Login();
-                    //l.Login();
+                    Login l = new Login();
+                    l.Login();
                     break;
 
                 case 2:
-                    //Register r = new Register();
-                    //r.Register();
+                    Register r = new Register();
+                    r.Register();
                     break;
 
                 default:

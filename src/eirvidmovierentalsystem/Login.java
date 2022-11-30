@@ -1,6 +1,10 @@
 package eirvidmovierentalsystem;
 
-public class Login {
+import SQL.SQLConnection;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
     public class Login extends Menu {
 
         private String username;
@@ -47,4 +51,3 @@ public class Login {
         }
     
     }
-}

@@ -1,5 +1,10 @@
 package eirvidmovierentalsystem;
 
+import SQL.SQLConnection;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Register extends Menu {
 
     private String email;
@@ -41,7 +46,7 @@ public class Register extends Menu {
             conn.getPst().execute();
 
             //executes the query
-            ResultSet rs = conn.getPst().executeQuery();
+            //ResultSet rs = conn.getPst().executeQuery();
 
             System.out.println("Registration successful!");
 
