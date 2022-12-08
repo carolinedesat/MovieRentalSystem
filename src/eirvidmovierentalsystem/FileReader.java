@@ -5,7 +5,7 @@
  */
 package eirvidmovierentalsystem;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
@@ -14,32 +14,19 @@ import java.io.IOException;
  */
 public class FileReader {
 
-public static void main(String[] args) throws IOException
-    {
-        // variable declaration
-        int ch;
- 
-        // check if File exists or not
-        FileReader fr = null;
-        fr = new FileReader("text");
- 
-        // read from FileReader till the end of file
-        while ((ch=fr.read())!=-1)
-            System.out.print((char)ch);
- 
-        // close the file
-        fr.close();
-    }
-
-    private FileReader(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int read() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void close() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public static void main(String[] args) {
+    
+        String csvFile = "movies_metadata.csv";
+        String line = "";
+        String cvsSplitBy = ",";
+        try (BufferedReader br = new BufferedReader(new java.io.FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                // use comma as separator
+                String[] movie = line.split(cvsSplitBy);
+                System.out.println("MOVIE: " + movie[5] + movie[6]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
