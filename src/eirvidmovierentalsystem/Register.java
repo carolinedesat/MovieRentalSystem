@@ -42,10 +42,10 @@ public class Register extends Menu {
             SQLConnection conn = new SQLConnection();
 
             //retrieves and stores the query
-            String insert = "INSERT INTO customers (email, username, password) VALUES (?, ?, ?)";
+            String insertUser = "INSERT INTO customers (email, username, password) VALUES (?, ?, ?)";
 
             //gets a statement from the connection
-            conn.prepareStatement(insert);
+            conn.prepareStatement(insertUser);
 
             //passses the parameters
             conn.getPst().setString(1, email);
