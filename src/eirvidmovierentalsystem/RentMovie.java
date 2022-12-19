@@ -6,7 +6,6 @@
 package eirvidmovierentalsystem;
 
 import SQL.SQLConnection;
-import FileManager.FileWriter;
 import FileManager.FileReader;
 import java.sql.ResultSet;
 import java.util.logging.Level;
@@ -16,19 +15,11 @@ import java.util.logging.Logger;
  *
  * @author carol
  */
-public class RentMovie extends Login {
+public class RentMovie {
 
-    private String movieid;
-    private String title;
-    private String collection;
+    FileReader fr = new FileReader();
 
     public void DisplayMovies() {
-        
-    FileWriter fw = new FileWriter();
-    fw.WriteMovie();
-    
-    FileReader f = new FileReader();
-    f.ReadMovie();
 
         try {
 
@@ -49,12 +40,11 @@ public class RentMovie extends Login {
 
             //adds the usernames to the list
             while (rs.next()) {
-                movieid = rs.getString("movieid");
-                title = rs.getString("title");
-                collection = rs.getString("collection");
+                fr.setTitle(rs.getString("movieid"));
+                fr.setPrice(rs.getString("title"));
             }
             
-            System.out.println(movieid + title + collection);
+            System.out.println(fr.getTitle() + fr.getPrice());
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);

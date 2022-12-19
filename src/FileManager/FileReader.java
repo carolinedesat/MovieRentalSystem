@@ -6,7 +6,10 @@
 package FileManager;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,10 +19,34 @@ public class FileReader {
     
     private String movieid;
     private String title;
-    private String collection;
+    private String price;
+
+    public String getMovieid() {
+        return movieid;
+    }
+
+    public void setMovieid(String movieid) {
+        this.movieid = movieid;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     public void ReadMovie() {
-
+        
         String csvFile = "Movie_Metadata_Edited_2.csv";
         String line = "";
         String cvsSplitBy = ",";
@@ -28,9 +55,8 @@ public class FileReader {
             while ((line = br.readLine()) != null) {
                 // use comma as separator
                 String[] movie = line.split(cvsSplitBy);
-                movieid = movie[5];
-                title = movie[1];
-                collection = movie[2];
+                this.title = movie[1];
+                this.price = movie[10];
             }
 
         } catch (IOException e) {

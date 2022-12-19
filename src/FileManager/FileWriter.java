@@ -18,9 +18,7 @@ import java.util.logging.Logger;
  */
 public class FileWriter {
     
-    private String movieid;
-    private String title;
-    private String collection;
+    FileReader fr = new FileReader();
 
     public void WriteMovie() {
 
@@ -33,15 +31,14 @@ public class FileWriter {
             SQLConnection conn = new SQLConnection();
 
             //retrieves and stores the query
-            String insertMovie = "INSERT INTO movies (movieid, title, collection) VALUES (?, ?, ?)";
+            String insertMovie = "INSERT INTO movies (title, price) VALUES (?, ?)";
 
             //gets a statement from the connection
             conn.prepareStatement(insertMovie);
 
             //passses the parameters
-            conn.getPst().setString(1, movieid);
-            conn.getPst().setString(2, title);
-            conn.getPst().setString(1, collection);
+            conn.getPst().setString(1, fr.getTitle());
+            conn.getPst().setString(2, fr.getPrice());
 
             System.out.println("Movie written into the database!");
 
