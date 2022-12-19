@@ -14,18 +14,13 @@ import java.util.logging.Logger;
  * @author Yan Oliveira 2020336
  */
 public class Register extends Menu {
-
-    private String email;
+    
     private String username;
     private String password;
 
-   
     public void Register() {
 
         System.out.println("---------- REGISTRATION PAGE ----------");
-
-        System.out.println("Please enter your email:");
-        email = s.nextLine();
 
         System.out.println("Please enter your username:");
         username = s.nextLine();
@@ -42,20 +37,18 @@ public class Register extends Menu {
             SQLConnection conn = new SQLConnection();
 
             //retrieves and stores the query
-            String insertUser = "INSERT INTO customers (email, username, password) VALUES (?, ?, ?)";
+            String insertUser = "INSERT INTO customers (username, password) VALUES (?, ?)";
 
             //gets a statement from the connection
             conn.prepareStatement(insertUser);
 
             //passses the parameters
-            conn.getPst().setString(1, email);
-            conn.getPst().setString(2, username);
-            conn.getPst().setString(3, password);
+            conn.getPst().setString(1, username);
+            conn.getPst().setString(2, password);
             conn.getPst().execute();
 
             //executes the query
             //ResultSet rs = conn.getPst().executeQuery();
-
             System.out.println("Registration successful!");
 
             Menu m = new Menu();
@@ -68,4 +61,3 @@ public class Register extends Menu {
     }
 
 }
-    

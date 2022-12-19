@@ -20,11 +20,5 @@ public class EirVidMovieRentalSystem {
         Menu m = new Menu();
         m.openMenu();
 
-        Login l = new Login();
-       l.Login();
-
-       Register r = new Register();
-       r.Register();
-
     }
 }

@@ -50,8 +50,8 @@ public class Login extends Menu {
 
             System.out.println("Login successful!");
 
-            Menu m = new Menu();
-            m.openMenu();
+            RentMovie r = new RentMovie();
+            r.DisplayMovies();
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
