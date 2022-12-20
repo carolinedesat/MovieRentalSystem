@@ -7,16 +7,25 @@ package FileManager;
 
 /**
  *
- * @author carol
+ * @author Caroline de Sa, 2020331
  */
 public class Movies {
-    
+
+    private String movieid;
     private String title;
     private String price;
 
     public Movies(String title, String price) {
         this.title = title;
         this.price = price;
+    }
+
+    public String getMovieid() {
+        return movieid;
+    }
+
+    public void setMovieid(String movieid) {
+        this.movieid = movieid;
     }
 
     public String getTitle() {
@@ -34,5 +43,5 @@ public class Movies {
     public void setPrice(String price) {
         this.price = price;
     }
-    
+
 }

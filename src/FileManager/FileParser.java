@@ -6,7 +6,6 @@
 package FileManager;
 
 import SQL.SQLConnection;
-import eirvidmovierentalsystem.RentMovie;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author carol
+ * @author Caroline de Sa, 2020331
  */
 public class FileParser {
 
@@ -61,9 +60,9 @@ public class FileParser {
             }
 
             System.out.println("Movies imported to the database");
-            
-            RentMovie rm = new RentMovie();
-            rm.DisplayMovies();
+
+            FileDisplay rm = new FileDisplay();
+            rm.DisplayFile();
 
         } catch (Exception e) {
             System.out.println("Error reading the csv file");

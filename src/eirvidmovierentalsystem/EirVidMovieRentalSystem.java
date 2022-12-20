@@ -5,6 +5,8 @@
  */
 package eirvidmovierentalsystem;
 
+import UserManager.Menu;
+
 /**
  *
  * @author Carol de Sa Teixeira – 2020331

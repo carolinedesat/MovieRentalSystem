@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eirvidmovierentalsystem;
+package FileManager;
 
-import FileManager.FileParser;
 import SQL.SQLConnection;
+import UserManager.Register;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author carol
+ * @author Caroline de Sa, 2020331
  */
-public class RentMovie {
-
+public class FileDisplay {
+    
     FileParser fp = new FileParser();
 
-    public void DisplayMovies() {
+    public void DisplayFile() {
 
         try {
 
@@ -38,17 +38,13 @@ public class RentMovie {
             //executes the query
             ResultSet rs = conn.getPst().executeQuery();
 
-            if (rs.next()) {
-                
-                //String username = rs.getString("username");
+            while (rs.next()) {
+                int movieid = rs.getInt("movieid");
+                String title = rs.getString("title");
+                String price = rs.getString("price");
 
-                rs.getString("title");
-                rs.getString("price");
-
-            } else {
-
-                System.out.println("ERROR DISPLAYING");
-
+                System.out.println("The available movies are:");
+                System.out.println("ID: " + movieid + " | " + "Title: " + title + " | " + "Price: " + price);
             }
 
         } catch (Exception ex) {

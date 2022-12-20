@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eirvidmovierentalsystem;
+package UserManager;
 
-import SQL.SQLConnection;
 import FileManager.FileParser;
+import SQL.SQLConnection;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,7 +74,7 @@ public class Login extends Menu {
             //executes the query
             ResultSet rs = conn.getPst().executeQuery();
 
-            System.out.println("Login successful!");
+            System.out.println("Login successful! Database loading...");
 
             FileParser fp = new FileParser();
             fp.parseFile("Movie_Metadata_Edited_2.csv");

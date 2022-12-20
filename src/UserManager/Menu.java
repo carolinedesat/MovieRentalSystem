@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eirvidmovierentalsystem;
+package UserManager;
 
 import java.util.Scanner;
 
 /**
  *
- * @author caroline de sa 2020331
+ * @author Yan Oliveira 2020336
  */
 public class Menu {
-
+    
     Scanner s = new Scanner(System.in);
 
     public void openMenu() throws Exception {
