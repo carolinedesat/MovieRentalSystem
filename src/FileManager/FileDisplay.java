@@ -28,26 +28,29 @@ public class FileDisplay {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             //retrieves and stores the query
-            String displayMovie = "SELECT * FROM movies";
+            String query = "SELECT * FROM movies";
 
             //gets a connection to the database
             SQLConnection conn = new SQLConnection();
 
             //gets a statement from the connection
-            conn.prepareStatement(displayMovie);
+            conn.prepareStatement(query);
 
             //executes the query
             ResultSet rs = conn.getPst().executeQuery();
 
             while (rs.next()) {
+                //retrieves movieid, title and price from the SQL database
+                //and stores them inside the variables
                 int movieid = rs.getInt("movieid");
                 String title = rs.getString("title");
                 String price = rs.getString("price");
 
-                System.out.println("The available movies are:");
+                //outputs the list of movies
                 System.out.println("ID: " + movieid + " | " + "Title: " + title + " | " + "Price: " + price);
             }
             
+            //opens the movie pick page
             MoviePick mp = new MoviePick();
             mp.PickMovie();
 

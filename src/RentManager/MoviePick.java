@@ -6,51 +6,61 @@
 package RentManager;
 
 import SQL.SQLConnection;
-import UserManager.Login;
+import UserManager.Register;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author carol
  */
 public class MoviePick {
-    
-    Login l = new Login();
+
+    Scanner s = new Scanner(System.in);
 
     public void PickMovie() {
 
-        Scanner s = new Scanner(System.in);
-        System.out.println("------------ EirVid ------------");
-        System.out.print("Enter the ID of the movie you want to pick: ");
+        //outputs the movie pick page
         System.out.println("----------------------------------------");
-        int id = s.nextInt();
+        System.out.println("[EIRVID MOVIE RENTAL]");
+        System.out.print("Enter the ID of the movie you want to pick: ");
+        int movieid = s.nextInt(); //stores the user input inside the "movieid" variable
 
-        // Select the record with the specified ID
-        String pickMovie = "SELECT * FROM movies WHERE movieid = ?";
+        //retrieves and stores the query
+        String query = "SELECT * FROM movies WHERE movieid = ?";
+        
         try {
 
             //gets a connection to the database
             SQLConnection conn = new SQLConnection();
 
             //gets a statement from the connection
-            conn.prepareStatement(pickMovie);
+            conn.prepareStatement(query);
 
-            conn.getPst().setInt(1, id);
+            //passses all the parameters
+            conn.getPst().setInt(1, movieid);
+            
+            //executes the query
             ResultSet rs = conn.getPst().executeQuery();
+            
             if (rs.next()) {
-                // Print the contents of the record
+                //retrieves movieid, title and price from the SQL database
+                //and prints them to the console
+                System.out.println("----------------------------------------");
                 System.out.println("ID: " + rs.getInt("movieid"));
                 System.out.println("Title: " + rs.getString("title"));
                 System.out.println("Price: " + rs.getString("price"));
-                // etc.
+                System.out.println("----------------------------------------");
+
             } else {
-                System.out.println("No record with ID " + id + " was found.");
+                System.out.println("No record with ID " + movieid + " was found.");
+                PickMovie(); //opens the pick movie page again if the user input is not valid
             }
-        } catch (SQLException e) {
-            System.out.println("An error occurred while executing the query.");
-            e.printStackTrace();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

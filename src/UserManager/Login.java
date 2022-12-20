@@ -20,29 +20,15 @@ public class Login extends Menu {
     private String username;
     private String password;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public void Login() {
 
-        System.out.println("---------- LOGIN PAGE ----------");
+        //outputs the login page
+        System.out.println("----------------------------------------");
+        System.out.println("[LOGIN PAGE]");
         System.out.println("Please enter your username:");
-        username = s.nextLine();
+        username = s.nextLine(); //stores the user input inside the "username" variable
         System.out.println("Please enter your password:");
-        password = s.nextLine();
+        password = s.nextLine(); //stores the user input inside the "password" variable
 
         try {
 
@@ -65,8 +51,12 @@ public class Login extends Menu {
             //executes the query
             ResultSet rs = conn.getPst().executeQuery();
 
-            System.out.println("Login successful! Database loading...");
+            System.out.println("----------------------------------------");
+            System.out.println("Login successful!");
+            System.out.println("Database loading...");
+            System.out.println("----------------------------------------");
 
+            //runs the file parser
             FileParser fp = new FileParser();
             fp.ParseFile("Movie_Metadata_Edited_2.csv");
 

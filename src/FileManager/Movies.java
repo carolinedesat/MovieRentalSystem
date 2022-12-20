@@ -15,11 +15,13 @@ public class Movies {
     private String title;
     private String price;
 
+    //constructor
     public Movies(String title, String price) {
         this.title = title;
         this.price = price;
     }
 
+    //getters and setters
     public String getMovieid() {
         return movieid;
     }

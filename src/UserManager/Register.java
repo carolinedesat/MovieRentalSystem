@@ -14,19 +14,19 @@ import java.util.logging.Logger;
  * @author Yan Oliveira 2020336
  */
 public class Register extends Menu {
-    
+
     private String username;
     private String password;
 
     public void Register() {
 
-        System.out.println("---------- REGISTRATION PAGE ----------");
-
+        //outputs the register page
+        System.out.println("----------------------------------------");
+        System.out.println("[REGISTRATION PAGE]");
         System.out.println("Please enter your username:");
-        username = s.nextLine();
-
+        username = s.nextLine(); //stores the user input inside the "username" variable
         System.out.println("Please enter your password:");
-        password = s.nextLine();
+        password = s.nextLine(); //stores the user input inside the "password" variable
 
         try {
 
@@ -37,20 +37,20 @@ public class Register extends Menu {
             SQLConnection conn = new SQLConnection();
 
             //retrieves and stores the query
-            String insertUser = "INSERT INTO customers (username, password) VALUES (?, ?)";
+            String query = "INSERT INTO customers (username, password) VALUES (?, ?)";
 
             //gets a statement from the connection
-            conn.prepareStatement(insertUser);
+            conn.prepareStatement(query);
 
             //passses the parameters
             conn.getPst().setString(1, username);
             conn.getPst().setString(2, password);
             conn.getPst().execute();
 
-            //executes the query
-            //ResultSet rs = conn.getPst().executeQuery();
+            System.out.println("----------------------------------------");
             System.out.println("Registration successful!");
 
+            //opens the menu again so the user can login
             Menu m = new Menu();
             m.openMenu();
 
