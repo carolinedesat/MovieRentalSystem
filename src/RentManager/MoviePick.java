@@ -49,7 +49,6 @@ public class MoviePick {
                 //retrieves title and price from the SQL database
                 //and prints them to the console
                 System.out.println("----------------------------------------");
-                System.out.println("You rented the movie:");
                 System.out.println("Title: " + rs.getString("title"));
                 System.out.println("Price: " + rs.getString("price"));
                 System.out.println("----------------------------------------");
@@ -68,7 +67,7 @@ public class MoviePick {
                 }
 
                 int durationInSeconds = 0;
-                
+
                 //rents the selected movie for the selected duration
                 if (duration == 1) {
                     durationInSeconds = 60;
@@ -77,13 +76,13 @@ public class MoviePick {
                 } else if (duration == 3) {
                     durationInSeconds = 600;
                 }
-                System.out.println("You have rented " + rs.getString("title") + " for " + durationInSeconds / 60 + " minutes.");
+
+                System.out.println("You have rented [" + rs.getString("title") + "] for " + durationInSeconds / 60 + " minutes.");
                 System.out.println("----------------------------------------");
 
-                // Start the timer
+                //starts the timer
                 MovieTimer mt = new MovieTimer();
                 mt.StartTimer(durationInSeconds);
-
 
             } else {
                 System.out.println("No record with ID " + movieid + " was found.");

@@ -9,8 +9,7 @@ import UserManager.Menu;
 
 /**
  *
- * @author Carol de Sa Teixeira – 2020331
- * @author Yan Oliveira 2020336
+ * 
  */
 public class EirVidMovieRentalSystem {
 
@@ -20,7 +19,7 @@ public class EirVidMovieRentalSystem {
     public static void main(String[] args) throws Exception {
 
         Menu m = new Menu();
-        m.openMenu();
+        m.OpenMenu();
 
     }
 }

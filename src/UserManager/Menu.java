@@ -16,7 +16,7 @@ public class Menu {
     //reads the user input
     Scanner s = new Scanner(System.in);
 
-    public void openMenu() throws Exception {
+    public void OpenMenu() throws Exception {
 
         //outputs the menu
         System.out.println("----------------------------------------");
@@ -31,7 +31,7 @@ public class Menu {
         if (sign < 1 || sign > 3) {
             System.out.println("Invalid option. Please try again.");
             //opens the menu again if the user input is invalid
-            openMenu();
+            OpenMenu();
 
         } else {
 
@@ -51,7 +51,7 @@ public class Menu {
                     System.out.println("Not a valid option!");
                     System.out.println("----------------------------------------");
                     //opens the menu again if the user input is not 1 or 2
-                    openMenu();
+                    OpenMenu();
             }
         }
     }

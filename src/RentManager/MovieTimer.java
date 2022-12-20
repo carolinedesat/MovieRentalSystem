@@ -13,9 +13,9 @@ import java.util.Scanner;
  * @author carol
  */
 public class MovieTimer {
-    
+
     Scanner s = new Scanner(System.in);
-    
+
     public void StartTimer(int duration) throws Exception {
 
         for (int i = duration; i >= 0; i--) {
@@ -26,13 +26,13 @@ public class MovieTimer {
             }
             System.out.println(i + " seconds remaining");
         }
-        
+
         System.out.println("----------------------------------------");
         System.out.println("Your renting duration is over!");
-        System.out.println("Thank you for renting a movie with EirVid. :)");
-        
+        System.out.println("Thank you for renting with EirVid. :)");
+
         Menu m = new Menu();
-        m.openMenu();
+        m.OpenMenu();
     }
 
 }

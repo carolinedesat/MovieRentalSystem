@@ -52,7 +52,7 @@ public class Register extends Menu {
 
             //opens the menu again so the user can login
             Menu m = new Menu();
-            m.openMenu();
+            m.OpenMenu();
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
