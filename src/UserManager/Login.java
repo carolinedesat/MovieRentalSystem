@@ -17,17 +17,8 @@ import java.util.logging.Logger;
  */
 public class Login extends Menu {
 
-    public int userid;
     private String username;
     private String password;
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
 
     public String getUsername() {
         return username;
@@ -77,7 +68,7 @@ public class Login extends Menu {
             System.out.println("Login successful! Database loading...");
 
             FileParser fp = new FileParser();
-            fp.parseFile("Movie_Metadata_Edited_2.csv");
+            fp.ParseFile("Movie_Metadata_Edited_2.csv");
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);

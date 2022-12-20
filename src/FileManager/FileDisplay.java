@@ -6,6 +6,7 @@
 package FileManager;
 
 import SQL.SQLConnection;
+import RentManager.MoviePick;
 import UserManager.Register;
 import java.sql.ResultSet;
 import java.util.logging.Level;
@@ -46,6 +47,9 @@ public class FileDisplay {
                 System.out.println("The available movies are:");
                 System.out.println("ID: " + movieid + " | " + "Title: " + title + " | " + "Price: " + price);
             }
+            
+            MoviePick mp = new MoviePick();
+            mp.PickMovie();
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);

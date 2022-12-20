@@ -20,7 +20,7 @@ public class FileParser {
     //CSV file header
     private static final String[] FILE_HEADER_MAPPING = {"title", "price"};
 
-    public void parseFile(String fileName) {
+    public void ParseFile(String fileName) {
 
         BufferedReader fileReader = null;
 
