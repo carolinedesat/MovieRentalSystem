@@ -6,6 +6,7 @@
 package eirvidmovierentalsystem;
 
 import SQL.SQLConnection;
+import FileManager.FileParser;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,8 +17,33 @@ import java.util.logging.Logger;
  */
 public class Login extends Menu {
 
+    public int userid;
     private String username;
     private String password;
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void Login() {
 
@@ -50,8 +76,8 @@ public class Login extends Menu {
 
             System.out.println("Login successful!");
 
-            RentMovie r = new RentMovie();
-            r.DisplayMovies();
+            FileParser fp = new FileParser();
+            fp.parseFile("Movie_Metadata_Edited_2.csv");
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);

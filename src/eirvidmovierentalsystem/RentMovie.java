@@ -5,8 +5,8 @@
  */
 package eirvidmovierentalsystem;
 
+import FileManager.FileParser;
 import SQL.SQLConnection;
-import FileManager.FileReader;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class RentMovie {
 
-    FileReader fr = new FileReader();
+    FileParser fp = new FileParser();
 
     public void DisplayMovies() {
 
@@ -38,13 +38,18 @@ public class RentMovie {
             //executes the query
             ResultSet rs = conn.getPst().executeQuery();
 
-            //adds the usernames to the list
-            while (rs.next()) {
-                fr.setTitle(rs.getString("movieid"));
-                fr.setPrice(rs.getString("title"));
+            if (rs.next()) {
+                
+                //String username = rs.getString("username");
+
+                rs.getString("title");
+                rs.getString("price");
+
+            } else {
+
+                System.out.println("ERROR DISPLAYING");
+
             }
-            
-            System.out.println(fr.getTitle() + fr.getPrice());
 
         } catch (Exception ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
