@@ -19,27 +19,23 @@ public class Menu {
     public void openMenu() throws Exception {
 
         //outputs the menu
-        System.out.println("----------------------------------------");  
+        System.out.println("----------------------------------------");
         System.out.println("[MENU]");
         System.out.println("Select one of the following options:");
         System.out.println("1) Login");
         System.out.println("2) Register");
         System.out.println("----------------------------------------");
+        int sign = s.nextInt(); //stores the user input inside the "sign" variable
 
-        //stores the user input inside the "sign" variable
-        String sign = s.next();
-
-        if (!sign.matches("[0-9]+")) {
-            System.out.println("----------------------------------------");
-            System.out.println("ERROR");
-            System.out.println("----------------------------------------");
-
-            //opens the menu again if the user input is not a number
+        //validates the user input to be a number between 1 and 2
+        if (sign < 1 || sign > 3) {
+            System.out.println("Invalid option. Please try again.");
+            //opens the menu again if the user input is invalid
             openMenu();
 
         } else {
 
-            switch (Integer.parseInt(sign)) {
+            switch (sign) {
                 case 1: //opens the login page when the user types the number 1
                     Login l = new Login();
                     l.Login();
